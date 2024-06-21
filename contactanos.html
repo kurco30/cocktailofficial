@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Opiniones - Cocktail</title>
+</head>
+<style > 
+
+body {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos de header */
+header {
+    background-color: #333;
+    padding: 20px 0;
+    position: fixed; /* Cabecera fija */
+    width: 100%; /* Ocupa todo el ancho */
+    top: 0; /* Arriba de la página */
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 50px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #555;
+}
+
+nav ul li ul.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li:hover ul.dropdown {
+    display: block;
+}
+
+nav ul li ul.dropdown li {
+    width: 200px;
+}
+
+nav ul li ul.dropdown li a {
+    padding: 10px;
+}
+
+.review-form-container {
+    background-color: #383838;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    text-align: center;
+    margin: 100px auto; /* Centrar verticalmente */
+}
+
+.review-form-container h1 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+input, textarea {
+    width: calc(100% - 20px); /* Considera el padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 4px;
+}
+
+.rating {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    color: #ccc;
+    cursor: pointer;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+    color: #ffca08;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+</style>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+               <a href="../index.html"><img src="../img/coc/logo.png" alt="Logo"></a> 
+            </div>
+            <h1 id="coct">Cocktail</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../index.html">Inicio</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Iniciar sesión</a></li>
+                            <li><a href="#">Reserva estadía</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="galeria.html">Cocteles</a></li>
+                    <li><a href="page4.html">Bocadillos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="review-form-container">
+        <h1>Deja tu Opinión</h1>
+        <form id="opinionForm" method="post">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="rating">Calificación</label>
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 estrellas">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 estrellas">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 estrellas">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 estrellas">&#9733;</label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 estrella">&#9733;</label>
+            </div>
+
+            <label for="message">Opinión</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+       <script>
+        document.getElementById('opinionForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenir el envío del formulario
+            var name = document.getElementById('name').value;
+            alert("Gracias por tu opinión, " + name); // Alerta con el nombre
+            console.log("Nombre:", name); // Log del nombre en la consola
+            setTimeout(function() {
+                window.location.href = '../index.html';
+            }, 1000);
+            // Aquí podrías enviar el formulario con AJAX o realizar otras acciones si lo necesitas
+        });
+    </script>
+</body>
+</html>

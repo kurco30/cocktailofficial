@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Cocktail</title>
+</head>
+<style> 
+
+body {
+    margin: 0;
+    font-family: 'Fira Sans', sans-serif;
+background: url(img/fondo.png);
+    background-repeat: no-repeat;
+    background-size:cover ;
+    color: #f4f4f4;
+    overflow-x: hidden;
+    background-attachment: fixed;
+}
+
+.capa{
+
+
+position: fixed;
+width: 100%;
+height: 100vh;
+z-index: -1;
+background: rgba(0,0,0,0.6);
+
+top: 0;left: 0;
+
+
+}
+
+
+</style>
+<body>
+    <div class="capa"></div>
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        <h1>Cocktail</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Menu</a>
+                    <ul class="dropdown">
+                        <li><a href="html/galeria.html">Menu</a></li>
+                        <li><a href="html/contactanos.html">Calificanos</a></li>
+                        <li><a href="html/estadia.html">Reservar estadia</a></li>
+                         <li><a href="html/sesion.html">Iniciar sesion</a></li>
+                    </ul>
+                </li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#historia">Historia</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="FRASE">
+        Donde cada sorbo es una experiencia inolvidable. Bienvenidos a Cocktail.
+    </div>
+
+    <div class="con">
+        <h3 id="con">Cervecería Mexicana </h3>
+        <h3 id="con">Mariachis El Jalisciense</h3>
+        <h3 id="con">Tecnología BarTender</h3>
+    </div>
+
+    <div class="Servicios">
+        <div class="servicio">
+            <img src="img/Captura2.png" alt="Servicio de Coctelería">
+            <h3>Coctelería</h3>
+            <p>Disfruta de una amplia variedad de cócteles preparados por nuestros bartenders profesionales.</p>
+        </div>
+        <div class="servicio">
+            <img src="img/Captura.png" alt="Servicio de Música en Vivo">
+            <h3>Música en Vivo</h3>
+            <p>Relájate con música en vivo todas las noches, desde jazz hasta bandas locales.</p>
+        </div>
+        <div class="servicio">
+            <img src="img/Captura3.png" alt="Servicio de Tapas y Bocadillos">
+            <h3> Bocadillos</h3>
+            <p>Saborea nuestras deliciosas tapas y bocadillos, perfectos para acompañar tus bebidas.</p>
+        </div>
+    </div>
+
+ 
+  
+    
+    <!-- Sección Nosotros -->
+    <section id="nosotros">
+        <div class="container">
+            <div class="content">
+                <h2>Nosotros</h2>
+                <p>En Cocktail, nos enorgullecemos de ofrecer un ambiente acogedor y vibrante. Nuestro equipo está dedicado a brindarte la mejor experiencia con cada visita. Creemos en la calidad, la atención al detalle y el servicio excepcional. Ven a conocernos y sé parte de nuestra familia.</p>
+            </div>
+            <div class="image">
+                <img src="img/nosotros.png" alt="Nosotros">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Historia -->
+    <section id="historia">
+        <div class="container">
+            <div class="image">
+                <img src="img/Captura4.png" alt="Historia del Bar">
+            </div>
+            <div class="content">
+                <h2>Historia del Bar</h2>
+                <p>Cocktail nació de la pasión por la mixología y el deseo de crear un espacio donde las personas pudieran disfrutar de bebidas excepcionales y momentos inolvidables. Desde nuestros humildes comienzos en 1986, hemos crecido gracias a la preferencia de nuestros clientes y al esfuerzo continuo por innovar en cada bebida que servimos.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section about"  style="text-align: center;">
+            <h3>Sobre Nosotros</h3>
+            <p>Cocktail es tu bar de confianza para disfrutar de los mejores cocteles y un ambiente inolvidable. Ven y vive la experiencia.</p>
+        </div>
+        <div class="footer-section links"  style="text-align: center;">
+            <h3>Enlaces Rápidos</h3 >
+            <ul class="horizontal-list">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="html/galeria.html">Menu</a></li>
+              
+                <li><a href="contactanos.html">Agendar</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact" style="text-align: center;">
+            <h3>Contacto</h3>
+            <p>Email: contacto@cocktailbar.com</p>
+            <p>Tel: +52 123 456 7890</p>
+            <p>Dirección: Calle Falsa 123, CDMX, México</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2024 Cocktail | Diseñado por Kevin
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var fraseDiv = document.querySelector('.FRASE');
+        fraseDiv.classList.add('visible');
+    });
+</script>
+</body>
+</html>

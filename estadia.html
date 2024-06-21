@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/es.css">
+    <title>Reserva de Estadía - Cocktail</title>
+</head>
+<style type="text/css">
+
+
+
+</style>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+               <a href="../index.html"><img src="../img/coc/logo.png" alt="Logo"></a> 
+            </div>
+            <h1>Cocktail</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="galeria.html">Cocteles</a></li>
+                    <li><a href="page4.html">Bocadillos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="content-container">
+        <div class="form-container">
+            <h1>Reserva de Estadía</h1>
+            <form id="reservationForm">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Teléfono</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="date">Fecha de Reserva</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Hora de Reserva</label>
+                <input type="time" id="time" name="time" required>
+
+               <label for="guests">Número de Personas (máximo 6)</label>
+<input type="number" id="guests" name="guests" required min="1" max="6">
+
+
+                <label for="message">Mensaje Adicional</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+
+                <button type="button" onclick="generateTicket()">Reservar</button>
+            </form>
+        </div>
+        <div class="ticket-container" id="ticketContainer">
+            <!-- Ticket se generará aquí -->
+        </div>
+    </div>
+
+ 
+    <script>
+        function generateTicket() {
+            // Obtener los valores de los campos del formulario
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const guests = document.getElementById('guests').value;
+            const message = document.getElementById('message').value;
+            const price = guests * 150; // Precio por persona
+
+            // Verificar si todos los campos del formulario están llenos
+            if (name && email && phone && date && time && guests) {
+                const ticketHtml = `
+                    <div class="ticket">
+                        <h2>Ticket de Reserva</h2>
+                        <p><strong>Nombre:</strong> ${name}</p>
+                        <p><strong>Correo Electrónico:</strong> ${email}</p>
+                        <p><strong>Teléfono:</strong> ${phone}</p>
+                        <p><strong>Fecha de Reserva:</strong> ${date}</p>
+                        <p><strong>Hora de Reserva:</strong> ${time}</p>
+                        <p><strong>Número de Personas:</strong> ${guests}</p>
+                        <p><strong>Mensaje Adicional:</strong> ${message}</p>
+                        <p><strong>Precio Total:</strong> $${price}</p>
+                    </div>
+                `;
+
+                document.getElementById('ticketContainer').innerHTML = ticketHtml;
+
+                // Mostrar alerta de confirmación con el precio total
+                window.alert(`Reserva realizada con éxito.\nTotal a pagar: $${price}`);
+            } else {
+                alert('Por favor, complete todos los campos del formulario.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+body {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding-top: 80px; /* Espacio para la cabecera fija */
+}
+
+header {
+    background-color: #333;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 50px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #555;
+}
+
+.content-container {
+    background-color: #383838;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 600px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-container h1 {
+    margin-bottom: 20px;
+    color: #ff6f61;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+    color: #fff;
+}
+
+input, textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #444;
+    color: #fff;
+}
+
+button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ff8a75;
+}
+
+.ticket-container {
+    margin-top: 20px;
+}
+
+.ticket {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    color: #fff;
+}
+
+.ticket h2 {
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+
+.ticket p {
+    margin: 5px 0;
+}
